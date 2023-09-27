@@ -3,9 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>TravelWiz</title>
 </head>
 <body>
-  <p>Hey Jude</p>
+  <form (ngSubmit)="login()" id="loginForm">
+    <input type="text"
+    [(ngModel)]="usuario.correo"
+    [ngModelOptions]="{standalone:true}"
+    placeholder="Email"
+    required>
+    <br>
+    <br>
+    <input type="password"
+    [(ngModel)]="usuario.password"
+    [ngModelOptions]="{standalone:true}"
+    placeholder="Password"
+    required>
+    <br>
+    <br>
+    <input type="submit">
+  </form>
 </body>
 </html>
