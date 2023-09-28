@@ -84,4 +84,8 @@ export class BienvenidaComponent
   limiarFormulario(){
     this.usuario = {};
   }
+
+  goToLugar(){
+    location.href="/lugar";
+  }
 }
