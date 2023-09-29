@@ -1,5 +1,11 @@
 <div class="container">
   <br>
+  <div class="btn-group btn-group-horizontal">
+    <button (click)="goToLugar()" type="button" class="btn btn-primary mx-2">Lugares</button>
+    <button (click)="goToViaje()" type="button" class="btn btn-primary mx-2">Viajes</button>
+  </div>
+  <br>
+  <hr>
   <h1> Crear usuario </h1>
   <hr>
   <button class="btn btn-outline-primary" (click)="limiarFormulario()">Limpiar formulario</button>
@@ -57,10 +63,4 @@
     </tr>
   </tbody>
 </table>
-<div>
-  <button (click)="goToLugar()" type="button" class="btn btn-primary">Lugares</button>
-  <br>
-  <br>
-</div>
-
 

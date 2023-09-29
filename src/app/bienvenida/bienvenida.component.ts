@@ -88,4 +88,8 @@ export class BienvenidaComponent
   goToLugar(){
     location.href="/lugar";
   }
+
+  goToViaje(){
+    location.href="/viaje";
+  }
 }
