@@ -13,7 +13,7 @@ export class LugarComponent {
 
   constructor(private htpp:HttpClient)
   {
-    this.buscarLugar();
+    this.buscarLugares();
   }
 
   //GUARDAR LUGAR
@@ -22,7 +22,7 @@ export class LugarComponent {
 
     if(formularioValido.reportValidity())
     {
-      this.servicioGuardarLugar().subscribe((l:any) => this.actualizar = l)
+      this.servicioGuardarLugar().subscribe((l:any) => this.actualizar(l))
     }
 
   }
@@ -37,12 +37,12 @@ export class LugarComponent {
   }
 
   //BUSCAR LUGAR
-  buscarLugar(){
-    this.servicioBuscarLugar().subscribe((l:any) => this.lugares = l)
+  buscarLugares(){
+    this.servicioBuscarLugares().subscribe((l:any) => this.lugares = l)
   }
 
-  servicioBuscarLugar(){
-    return this.htpp.get("http://localhost:8080/lugar/buscar");
+  servicioBuscarLugares():Observable<any>{
+    return this.htpp.get<any>("http://localhost:8080/lugar/buscar");
   }
 
   //ELIMINAR LUGAR
@@ -63,7 +63,7 @@ export class LugarComponent {
   //ACTUALIZAR PAGINA
   actualizar(l:any)
   {
-    this.buscarLugar();
+    this.buscarLugares();
     this.lugar = {};
   }
 }
