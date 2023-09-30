@@ -28,7 +28,7 @@
       <label class="lbl-group">Estado</label>
       <select class="form-select" aria-label="Seleccione" [(ngModel)]="viaje.idestado" [ngModelOptions]="{standalone:true}" required>
         <option selected></option>
-        <option *ngFor="let estado of estados" value="{{estado.idestado}}">{{estado.idestado}}</option>
+        <option *ngFor="let estado of estados" value="{{estado.idestado}}">{{estado.nombre}}</option>
       </select>
     </div>
     <div>
