@@ -66,4 +66,9 @@ export class LugarComponent {
     this.buscarLugares();
     this.lugar = {};
   }
+
+  //REGRESAR A BIENVENIDA
+  goToBienvenida(){
+    location.href="/bienvenida";
+  }
 }
