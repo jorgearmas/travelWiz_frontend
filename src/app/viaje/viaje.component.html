@@ -1,1 +1,86 @@
-<p>viaje works!</p>
+<br>
+<div class="btn-group btn-group-horizontal">
+  <button (click)="goToBienvenida()" type="button" class="btn btn-primary mx-2">Bienvenida</button>
+</div>
+<hr>
+<h1> Viajes </h1>
+<hr>
+<div>
+  <form  (ngSubmit)="guardarViaje()" id="viajeForm">
+    <br>
+    <div class="form-group">
+      <label class="lbl-group">Fecha Partida</label>
+      <input type="date"class="form-control" [(ngModel)]="viaje.fechaPartida" [ngModelOptions]="{standalone:true}" required>
+    </div>
+    <div class="form-group">
+      <label class="lbl-group">Fecha Regreso</label>
+      <input type="date" class="form-control" [(ngModel)]="viaje.fechaRegreso" [ngModelOptions]="{standalone:true}" required>
+    </div>
+    <div class="form-group">
+      <label class="lbl-group">Cupo</label>
+      <input type="number" class="form-control" [(ngModel)]="viaje.cupo" [ngModelOptions]="{standalone:true}" required>
+    </div>
+    <div class="form-group">
+      <label class="lbl-group">Descripcion</label>
+      <input type="text" class="form-control" [(ngModel)]="viaje.descripcion" [ngModelOptions]="{standalone:true}" required>
+    </div>
+    <div>
+      <label class="lbl-group">Estado</label>
+      <select class="form-select" aria-label="Seleccione" [(ngModel)]="viaje.idestado" [ngModelOptions]="{standalone:true}" required>
+        <option selected></option>
+        <option *ngFor="let estado of estados" value="{{estado.idestado}}">{{estado.idestado}}</option>
+      </select>
+    </div>
+    <div>
+      <label class="lbl-group">Origen</label>
+      <select class="form-select" aria-label="Seleccione" [(ngModel)]="viaje.origen" [ngModelOptions]="{standalone:true}" required>
+        <option selected></option>
+        <option *ngFor="let lugar of lugares" value="{{lugar.idlugar}}">{{lugar.nombre}}</option>
+      </select>
+    </div>
+    <div>
+      <label class="lbl-group">Destino</label>
+      <select class="form-select" aria-label="Seleccione" [(ngModel)]="viaje.destino" [ngModelOptions]="{standalone:true}" required>
+        <option selected></option>
+        <option *ngFor="let lugar of lugares" value="{{lugar.idlugar}}">{{lugar.nombre}}</option>
+      </select>
+    </div>
+    <br>
+    <input type="submit" class="btn btn-outline-success float-start" value="Guardar">
+  </form>
+</div>
+
+<div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Acciones</th>
+        <th scope="col">Fecha Partida</th>
+        <th scope="col">Fecha Regreso</th>
+        <th scope="col">Cupo</th>
+        <th scope="col">Descripción</th>
+        <th scope="col">Estado</th>
+        <th scope="col">Origen</th>
+        <th scope="col">Destino</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let viaje of viajes">
+        <th scope="row">{{viaje.idviaje}}</th>
+        <td>
+          <button class="btn btn-outline-primary" (click)="modificarViaje(viaje)">Modificar</button>
+            &nbsp;
+          <button class="btn btn-outline-warning" (click)="eliminarViaje(viaje)">Eliminar</button>
+        </td>
+        <td>{{viaje.fechaPartida}}</td>
+        <td>{{viaje.fechaRegreso}}</td>
+        <td>{{viaje.cupo}}</td>
+        <td>{{viaje.descripcion}}</td>
+        <td>{{ viaje.idestado === 1 ? 'Activo' : 'Inactivo' }}</td>
+        <td>{{viaje.origen}}</td>
+        <td>{{viaje.destino}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
