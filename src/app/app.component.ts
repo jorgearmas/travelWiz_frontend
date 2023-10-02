@@ -7,4 +7,18 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'travelWiz';
+  sesionIniciada:boolean = false;
+  constructor(){
+    let t = localStorage.getItem("usuario");
+    if(t){
+      this.sesionIniciada = true;
+    }
+    else{
+      this.sesionIniciada = false;
+    }
+  }
+  logout(){
+    localStorage.clear();
+    location.href="#";
+  }
 }
