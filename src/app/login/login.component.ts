@@ -26,6 +26,9 @@ export class LoginComponent {
   {
     if(usuario)
     {
+      let t = JSON.stringify(usuario)
+      localStorage.setItem("usuario", t)
+      this.usuario = {}
       location.href="/bienvenida";
     }
     else{
