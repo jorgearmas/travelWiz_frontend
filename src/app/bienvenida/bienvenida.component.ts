@@ -92,4 +92,8 @@ export class BienvenidaComponent
   goToViaje(){
     location.href="/viaje";
   }
+
+  goToPerfil(){
+    location.href="/miperfil"
+  }
 }
