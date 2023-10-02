@@ -10,6 +10,8 @@ import { LoginComponent } from './login/login.component';
 import { BienvenidaComponent } from './bienvenida/bienvenida.component';
 import { LugarComponent } from './lugar/lugar.component';
 import { ViajeComponent } from './viaje/viaje.component';
+import { EstadosPipe } from './estados.pipe';
+import { MiperfilComponent } from './miperfil/miperfil.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { ViajeComponent } from './viaje/viaje.component';
     LoginComponent,
     BienvenidaComponent,
     LugarComponent,
-    ViajeComponent
+    ViajeComponent,
+    EstadosPipe,
+    MiperfilComponent
   ],
   imports: [
     BrowserModule,
@@ -28,4 +32,6 @@ import { ViajeComponent } from './viaje/viaje.component';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+
+}
