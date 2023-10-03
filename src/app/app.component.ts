@@ -17,8 +17,15 @@ export class AppComponent {
       this.sesionIniciada = false;
     }
   }
+
+  actualizarEstadoSesion() {
+    const usuario = localStorage.getItem("usuario");
+    this.sesionIniciada = usuario ? true : false;
+  }
+
   logout(){
     localStorage.clear();
+    this.actualizarEstadoSesion();
     location.href="#";
   }
 }
