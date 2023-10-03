@@ -13,6 +13,7 @@ import { ViajeComponent } from './viaje/viaje.component';
 import { EstadosPipe } from './estados.pipe';
 import { MiperfilComponent } from './miperfil/miperfil.component';
 import { LugaresOrigenPipe } from './lugares-origen.pipe';
+import { LugaresDestinoPipe } from './lugares-destino.pipe';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { LugaresOrigenPipe } from './lugares-origen.pipe';
     ViajeComponent,
     EstadosPipe,
     MiperfilComponent,
-    LugaresOrigenPipe
+    LugaresOrigenPipe,
+    LugaresDestinoPipe
   ],
   imports: [
     BrowserModule,
