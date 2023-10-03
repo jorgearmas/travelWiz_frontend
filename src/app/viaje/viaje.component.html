@@ -79,7 +79,7 @@
         <td>{{viaje.descripcion}}</td>
         <td>{{viaje.idestado | estados: estados}}</td>
         <td>{{viaje.origen | lugaresOrigen: lugares}}</td>
-        <td>{{viaje.destino}}</td>
+        <td>{{viaje.destino | lugaresDestino: lugares}}</td>
       </tr>
     </tbody>
   </table>
