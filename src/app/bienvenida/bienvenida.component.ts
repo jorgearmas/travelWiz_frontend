@@ -85,15 +85,4 @@ export class BienvenidaComponent
     this.usuario = {};
   }
 
-  goToLugar(){
-    location.href="/lugar";
-  }
-
-  goToViaje(){
-    location.href="/viaje";
-  }
-
-  goToPerfil(){
-    location.href="/miperfil"
-  }
 }
