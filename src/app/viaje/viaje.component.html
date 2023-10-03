@@ -78,7 +78,7 @@
         <td>{{viaje.cupo}}</td>
         <td>{{viaje.descripcion}}</td>
         <td>{{viaje.idestado | estados: estados}}</td>
-        <td>{{viaje.origen}}</td>
+        <td>{{viaje.origen | lugaresOrigen: lugares}}</td>
         <td>{{viaje.destino}}</td>
       </tr>
     </tbody>
