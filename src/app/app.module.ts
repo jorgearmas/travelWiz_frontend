@@ -14,6 +14,7 @@ import { EstadosPipe } from './estados.pipe';
 import { MiperfilComponent } from './miperfil/miperfil.component';
 import { LugaresOrigenPipe } from './lugares-origen.pipe';
 import { LugaresDestinoPipe } from './lugares-destino.pipe';
+import { ConsultaUsuariosComponent } from './consulta-usuarios/consulta-usuarios.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { LugaresDestinoPipe } from './lugares-destino.pipe';
     EstadosPipe,
     MiperfilComponent,
     LugaresOrigenPipe,
-    LugaresDestinoPipe
+    LugaresDestinoPipe,
+    ConsultaUsuariosComponent
   ],
   imports: [
     BrowserModule,
