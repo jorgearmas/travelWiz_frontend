@@ -5,23 +5,28 @@
 </div>
 <div class="position-absolute top-50 start-50 translate-middle">
   <form (ngSubmit)="login()" id="loginForm">
-
-  <label class="form-label">Email: *</label>
+  <div class="text-center">
+    <!-- <label class="form-label">Email</label> -->
     <input type="text" class="form-control tamano"
     [(ngModel)]="usuario.correo"
     [ngModelOptions]="{standalone:true}"
     placeholder="Email"
     required
     >
-    <br>
-    <label class="form-label">Password: *</label>
+  </div>
+  <br>
+  <div class="text-center">
+    <!-- <label class="form-label">Password</label> -->
     <input type="password" class="form-control" style="width: 100%;"
     [(ngModel)]="usuario.password"
     [ngModelOptions]="{standalone:true}"
     placeholder="Password"
     required
     >
-    <br>
-    <input type="submit" class="btn btn-outline-primary float-end" value="Ingresar">
+  </div>
+  <br>
+  <div class="text-center">
+    <input type="submit" class="btn btn-dark" value="Ingresar">
+  </div>
   </form>
 </div>
