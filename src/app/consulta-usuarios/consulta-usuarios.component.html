@@ -1,1 +1,27 @@
-<p>consulta-usuarios works!</p>
+<div class="bg-dark text-center text-white">
+  <h1 style="padding-bottom: 7px;"> Usuarios </h1>
+</div>
+<div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Apellido</th>
+        <th scope="col">Correo</th>
+        <th scope="col">Password</th>
+        <th scope="col">Teléfono</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let usuario of usuarios">
+        <th scope="row">{{usuario.correo}}</th>
+        <td>{{usuario.nombre}}</td>
+        <td>{{usuario.apellido}}</td>
+        <td>{{usuario.correo}}</td>
+        <td>{{usuario.password}}</td>
+        <td>{{usuario.telefono}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
