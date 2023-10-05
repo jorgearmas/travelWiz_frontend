@@ -8,7 +8,7 @@ import { HttpClient,HttpHeaders } from '@angular/common/http';
 })
 export class LoginComponent {
 
-  usuario:any = {};
+  administrador:any = {};
 
   constructor(private htpp:HttpClient){
   }
@@ -18,17 +18,17 @@ export class LoginComponent {
     let formularioValido:any = document.getElementById("loginForm");
       if(formularioValido.reportValidity())
       {
-        this.servicioLogin().subscribe((u:any) => this.darBienvenida(u))
+        this.servicioLogin().subscribe((a:any) => this.darBienvenida(a))
       }
   }
 
-  darBienvenida(usuario:any)
+  darBienvenida(administrador:any)
   {
-    if(usuario)
+    if(administrador)
     {
-      let t = JSON.stringify(usuario)
+      let t = JSON.stringify(administrador)
       localStorage.setItem("usuario", t)
-      this.usuario = {}
+      this.administrador = {}
       location.href="/bienvenida";
     }
     else{
@@ -43,6 +43,6 @@ export class LoginComponent {
       headers:new HttpHeaders({'Content-Type':'application/json'})
     }
 
-      return this.htpp.post("http://localhost:8080/usuario/login", this.usuario, httpOptions);
+      return this.htpp.post("http://localhost:8080/administrador/login", this.administrador, httpOptions);
   }
 }
