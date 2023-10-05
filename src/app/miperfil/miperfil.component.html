@@ -3,10 +3,25 @@
 </div>
 <div class="card mx-auto my-5" style="width: 18rem;">
   <div class="card-body text-center">
-    <h5 class="card-title">Universidad Mariano Gálvez de Guatemala</h5>
-    <p class="card-text">Jorge Armas
-      <br>Carnet: 3190-15-8585
-      <br>Programación II
+    <h5 class="card-title">{{administrador.universidad}}</h5>
+    <p class="card-text">{{administrador.nombre}}
+      <br>Carnet: {{administrador.carnet}}
+      <br>{{administrador.curso}}
     </p>
+    <button (click) = "cambiarPassword()">Cambiar Contraseña</button>
+    <br>
+    <br>
+    <div *ngIf="mostrarFormulario">
+      <form (ngSubmit)="guardarNuevaPassword()" id="passwordForm">
+        <div class="form-group">
+          <label>Ingrese nueva contraseña</label>
+          <input type="text" class="form-control" [(ngModel)]="adminBase.password" [ngModelOptions]="{standalone:true}" required>
+        </div>
+        <br>
+        <div class="text-center">
+          <input type="submit" class="btn btn-success" value="Guardar">
+        </div>
+      </form>
+    </div>
   </div>
 </div>
