@@ -6,6 +6,7 @@ import { LugarComponent } from './lugar/lugar.component';
 import { ViajeComponent } from './viaje/viaje.component';
 import { MiperfilComponent } from './miperfil/miperfil.component';
 import { ConsultaUsuariosComponent } from './consulta-usuarios/consulta-usuarios.component';
+import { AnuncioComponent } from './anuncio/anuncio.component';
 
 const routes: Routes = [
   { path: '', component:LoginComponent },
@@ -13,7 +14,8 @@ const routes: Routes = [
   { path: 'lugar', component:LugarComponent},
   { path: 'viaje', component:ViajeComponent},
   { path: 'miperfil', component:MiperfilComponent},
-  { path: 'consulta-usuario', component:ConsultaUsuariosComponent}
+  { path: 'consulta-usuario', component:ConsultaUsuariosComponent},
+  { path: 'anuncio', component:AnuncioComponent}
 ];
 
 @NgModule({

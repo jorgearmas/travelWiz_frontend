@@ -15,6 +15,7 @@ import { MiperfilComponent } from './miperfil/miperfil.component';
 import { LugaresOrigenPipe } from './lugares-origen.pipe';
 import { LugaresDestinoPipe } from './lugares-destino.pipe';
 import { ConsultaUsuariosComponent } from './consulta-usuarios/consulta-usuarios.component';
+import { AnuncioComponent } from './anuncio/anuncio.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { ConsultaUsuariosComponent } from './consulta-usuarios/consulta-usuarios
     MiperfilComponent,
     LugaresOrigenPipe,
     LugaresDestinoPipe,
-    ConsultaUsuariosComponent
+    ConsultaUsuariosComponent,
+    AnuncioComponent
   ],
   imports: [
     BrowserModule,
