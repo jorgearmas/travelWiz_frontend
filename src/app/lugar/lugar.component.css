@@ -2,3 +2,9 @@
   border-width: 3px;
 }
 
+.img-container{
+  border: 3px solid #E0E0E0; /* Agregar un borde de 1 píxel sólido con color gris (#ccc) alrededor del div */
+  padding: 10px; /* Añadir relleno para separar el contenido del borde */
+  border-radius: 5px; /* Agregar bordes redondeados al div */
+}
+

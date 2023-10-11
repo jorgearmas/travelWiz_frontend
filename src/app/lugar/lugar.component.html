@@ -15,8 +15,10 @@
           <input type="text" class="form-control thick-border" [(ngModel)]="lugar.descripcion" [ngModelOptions]="{standalone:true}" required>
         </div>
         <div class="form-group text-start">
-          <label class="lbl-group text-start fs-5">Imagen</label>
-          <input type="text" class="form-control thick-border" [(ngModel)]="lugar.imagen" [ngModelOptions]="{standalone:true}" required>
+          <label class="lbl-group fs-5">Seleccione una imagen</label>
+          <div class="img-container">
+            <input type="file" (change)="onImageChange($event)" class="form-control-file" [(ngModel)]="lugar.imagen" [ngModelOptions]="{standalone:true}" required>
+          </div>
         </div>
         <br>
         <div class="text-center">
@@ -49,7 +51,11 @@
         </td>
         <td>{{lugar.nombre}}</td>
         <td>{{lugar.descripcion}}</td>
-        <td>{{lugar.imagen}}</td>
+        <td>
+          <div class="imagen-container">
+            <img [src]="lugar.imagen" class="imagen-preview img-thumbnail" width="400px" height="400px">
+          </div>
+        </td>
       </tr>
     </tbody>
   </table>

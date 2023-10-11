@@ -67,8 +67,14 @@ export class LugarComponent {
     this.lugar = {};
   }
 
-  //REGRESAR A BIENVENIDA
-  goToBienvenida(){
-    location.href="/bienvenida";
+  onImageChange(event: any){
+    const file = event.target.files[0];
+    const reader = new FileReader();
+
+    reader.onload = () => {
+      this.lugar.imagen = reader.result as string;
+    };
+
+    reader.readAsDataURL(file);
   }
 }
