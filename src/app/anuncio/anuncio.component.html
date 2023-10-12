@@ -1,1 +1,68 @@
-<p>anuncio works!</p>
+<div class="bg-dark text-center text-white">
+  <h1 style="padding-bottom: 7px;"> Gestión Anuncios </h1>
+</div>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <form  (ngSubmit)="guardarAnuncio()" id="anuncioForm">
+        <br>
+        <div class="form-group text-start">
+          <label class="lbl-group fs-5">Contenido de Anuncio</label>
+          <input type="text"class="form-control thick-border" [(ngModel)]="anuncio.texto" [ngModelOptions]="{standalone:true}" required>
+        </div>
+        <div class="form-group text-start">
+          <label class="lbl-group fs-5">Seleccione una imagen</label>
+          <div class="img-container">
+            <input type="file" (change)="onImageChange($event)" class="form-control-file" [(ngModel)]="anuncio.imagen" [ngModelOptions]="{standalone:true}" required>
+          </div>
+        </div>
+        <div class="form-group text-start">
+          <label class="lbl-group fs-5">Fecha Inicial</label>
+          <input type="date"class="form-control thick-border" [(ngModel)]="anuncio.fechaInicio" [ngModelOptions]="{standalone:true}" required>
+        </div>
+        <div class="form-group text-start">
+          <label class="lbl-group fs-5">Fecha Final</label>
+          <input type="date"class="form-control thick-border" [(ngModel)]="anuncio.fechaFin" [ngModelOptions]="{standalone:true}" required>
+        </div>
+        <br>
+        <div class="text-center">
+          <input type="submit" class="btn btn-success" value="Guardar">
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<br>
+<hr>
+<div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Acciones</th>
+        <th scope="col">Contenido</th>
+        <th scope="col">Imagen</th>
+        <th scope="col">Fecha Inicial</th>
+        <th scope="col">Fecha Final</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let anuncio of anuncios">
+        <th scope="row">{{anuncio.idanuncio}}</th>
+        <td>
+          <button class="btn btn-primary" (click)="modificarAnuncio(anuncio)">Modificar</button>
+            &nbsp;
+          <button class="btn btn-warning" (click)="eliminarAnuncio(anuncio)">Eliminar</button>
+        </td>
+        <td>{{anuncio.texto}}</td>
+        <td>
+          <div class="imagen-container">
+            <img [src]="anuncio.imagen" class="imagen-preview img-thumbnail" width="400px" height="400px">
+          </div>
+        </td>
+        <td>{{anuncio.fechaInicio}}</td>
+        <td>{{anuncio.fechaFin}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
