@@ -16,6 +16,7 @@ import { LugaresOrigenPipe } from './lugares-origen.pipe';
 import { LugaresDestinoPipe } from './lugares-destino.pipe';
 import { ConsultaUsuariosComponent } from './consulta-usuarios/consulta-usuarios.component';
 import { AnuncioComponent } from './anuncio/anuncio.component';
+import { ReservacionComponent } from './reservacion/reservacion.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { AnuncioComponent } from './anuncio/anuncio.component';
     LugaresOrigenPipe,
     LugaresDestinoPipe,
     ConsultaUsuariosComponent,
-    AnuncioComponent
+    AnuncioComponent,
+    ReservacionComponent
   ],
   imports: [
     BrowserModule,
