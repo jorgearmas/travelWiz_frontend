@@ -1,1 +1,27 @@
-<p>reservacion works!</p>
+<div class="bg-dark text-center text-white">
+  <h1 style="padding-bottom: 7px;"> Reservaciones </h1>
+</div>
+<div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">Cantidad de Pasajeros</th>
+        <th scope="col">Observaciones</th>
+        <th scope="col">Correo</th>
+        <th scope="col">Estado</th>
+        <th scope="col">Viaje</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let reservacion of reservaciones">
+        <th scope="row">{{reservacion.idreservacion}}</th>
+        <td>{{reservacion.cantidadPasajeros}}</td>
+        <td>{{reservacion.observaciones}}</td>
+        <td>{{reservacion.correo}}</td>
+        <td>{{reservacion.idestado }}</td>
+        <td>{{reservacion.idviaje}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
