@@ -19,7 +19,7 @@
         <td>{{reservacion.cantidadPasajeros}}</td>
         <td>{{reservacion.observaciones}}</td>
         <td>{{reservacion.correo}}</td>
-        <td>{{reservacion.idestado }}</td>
+        <td>{{reservacion.idestado | estados: estados}}</td>
         <td>{{reservacion.idviaje}}</td>
       </tr>
     </tbody>

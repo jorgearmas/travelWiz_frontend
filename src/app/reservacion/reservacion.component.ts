@@ -9,18 +9,29 @@ import { Observable } from 'rxjs';
 })
 export class ReservacionComponent {
   reservaciones: any = [];
+  estados: any = [];
 
   constructor(private htpp:HttpClient)
   {
     this.buscarReservaciones();
+    this.buscarEstados();
   }
 
-    //BUSCAR  RESERVACIONES
-    buscarReservaciones(){
-      this.servicioBuscarReservaciones().subscribe((r:any) => this.reservaciones = r)
-    }
+  //BUSCAR  RESERVACIONES
+  buscarReservaciones(){
+    this.servicioBuscarReservaciones().subscribe((r:any) => this.reservaciones = r)
+  }
 
-    servicioBuscarReservaciones():Observable<any>{
-      return this.htpp.get<any>("http://localhost:8080/reservacion/buscar");
-    }
+  servicioBuscarReservaciones():Observable<any>{
+    return this.htpp.get<any>("http://localhost:8080/reservacion/buscar");
+  }
+
+  //BUSCAR ESTADO
+  buscarEstados(){
+    this.servicioBuscarEstados().subscribe((e:any)=>this.estados = e)
+  }
+
+  servicioBuscarEstados():Observable<any>{
+    return this.htpp.get<any>("http://localhost:8080/estado/buscar");
+  }
 }
