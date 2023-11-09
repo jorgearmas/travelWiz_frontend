@@ -17,6 +17,8 @@ import { LugaresDestinoPipe } from './lugares-destino.pipe';
 import { ConsultaUsuariosComponent } from './consulta-usuarios/consulta-usuarios.component';
 import { AnuncioComponent } from './anuncio/anuncio.component';
 import { ReservacionComponent } from './reservacion/reservacion.component';
+import { TipoanuncioComponent } from './tipoanuncio/tipoanuncio.component';
+import { TipoanuncioPipe } from './tipoanuncio.pipe';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { ReservacionComponent } from './reservacion/reservacion.component';
     LugaresDestinoPipe,
     ConsultaUsuariosComponent,
     AnuncioComponent,
-    ReservacionComponent
+    ReservacionComponent,
+    TipoanuncioComponent,
+    TipoanuncioPipe
   ],
   imports: [
     BrowserModule,

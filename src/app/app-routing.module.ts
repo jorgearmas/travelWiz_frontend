@@ -8,6 +8,7 @@ import { MiperfilComponent } from './miperfil/miperfil.component';
 import { ConsultaUsuariosComponent } from './consulta-usuarios/consulta-usuarios.component';
 import { AnuncioComponent } from './anuncio/anuncio.component';
 import { ReservacionComponent } from './reservacion/reservacion.component';
+import { TipoanuncioComponent } from './tipoanuncio/tipoanuncio.component';
 
 const routes: Routes = [
   { path: '', component:LoginComponent },
@@ -17,7 +18,8 @@ const routes: Routes = [
   { path: 'miperfil', component:MiperfilComponent},
   { path: 'consulta-usuario', component:ConsultaUsuariosComponent},
   { path: 'anuncio', component:AnuncioComponent},
-  { path: 'reservacion', component:ReservacionComponent}
+  { path: 'reservacion', component:ReservacionComponent},
+  { path: 'tipoanuncio', component:TipoanuncioComponent}
 ];
 
 @NgModule({
