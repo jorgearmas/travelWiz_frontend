@@ -10,10 +10,12 @@ import { Observable } from 'rxjs';
 export class AnuncioComponent {
   anuncio:any = {};
   anuncios: any = [];
+  tipoanuncios: any = [];
 
   constructor(private htpp:HttpClient)
   {
     this.buscarAnuncios();
+    this.buscarTipoAnuncios();
   }
 
   //GUARDAR ANUNCIO
@@ -78,4 +80,13 @@ export class AnuncioComponent {
 
     reader.readAsDataURL(file);
   }
+
+    //BUSCAR TIPO DE ANUNCIOS
+    buscarTipoAnuncios(){
+      this.servicioBuscarTipoAnuncios().subscribe((t:any) => this.tipoanuncios = t)
+    }
+
+    servicioBuscarTipoAnuncios():Observable<any>{
+      return this.htpp.get<any>("http://localhost:8080/tipoanuncio/buscar");
+    }
 }
